@@ -24,10 +24,9 @@ function countdown(){
     time--;
     timeDisplay.textContent = time;
     
-    if (time === 0) {
+    if (time <= 0) {
         clearInterval(timer);
-        alert("Game Over! Your score: " + score);
-    }
+        endGame();}
 }
 
 textInput.addEventListener("input", () => {
@@ -39,6 +38,14 @@ textInput.addEventListener("input", () => {
     }
 });
 
+function endGame(){
+    clearInterval(timer);
+
+    textInput.disabled = true;
+
+    document.getElementById("finalScore").textContent = score;
+    document.getElementById("gameOver").classList.remove("hidden");
+}
 showWord();
 
 const timer = setInterval(countdown, 1000); 
