@@ -1,26 +1,98 @@
-body{
+:root {
+    --bg-color: #f4f4f4;
+    --card-bg: #ffffff;
+    --text-color: #111;
+    --nav-bg: #2c2c2c;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #f1f1f1;
+    --nav-bg: #1a1a1a;
+}
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: #222;
-    color: #fff;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    background: var(--nav-bg);
+    padding: 10px 30px;
+    color: white;
 }
 
-.game-container{
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-left a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.signup {
+    background: gold;
+    color: black;
+}
+
+.signin {
+    background: green;
+    color: white;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+}
+
+.title-section {
     text-align: center;
-    background: #333;
-    padding: 30px;
-    border-radius: 10px;
+    margin-top: 40px;
 }
 
-input{
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
+.game-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
 }
-#gameOver {
-    margin-top: 20px;
-    color: #ff4c4c;
+
+.game-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    transition: 0.3s;
 }
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
