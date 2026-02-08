@@ -27,3 +27,17 @@ toggleBtn.addEventListener("click", () => {
 
     localStorage.setItem("theme", currentTheme);
 });
+
+const footerThemeBtn = document.querySelector(".footer-theme-btn");
+
+if (footerThemeBtn) {
+    footerThemeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        const currentTheme = document.body.classList.contains("dark")
+            ? "dark"
+            : "light";
+
+        localStorage.setItem("theme", currentTheme);
+    });
+}
