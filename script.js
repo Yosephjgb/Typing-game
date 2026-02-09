@@ -1,43 +1,41 @@
-// Display Username
-const playerName = document.getElementById("playerName");
+document.addEventListener("DOMContentLoaded", () => {
 
-const username = localStorage.getItem("username");
+    // Username
+    const playerName = document.getElementById("playerName");
+    const username = localStorage.getItem("username");
+    if (playerName) {
+        playerName.textContent = username || "Guest";
+    }
 
-if (username) {
-    playerName.textContent = username;
-}
+    // Apply saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+    }
 
+    // Navbar theme toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
 
-// Dark Theme Toggle
-const toggleBtn = document.getElementById("themeToggle");
+            localStorage.setItem(
+                "theme",
+                document.body.classList.contains("dark") ? "dark" : "light"
+            );
+        });
+    }
 
-const savedTheme = localStorage.getItem("theme");
+    // Footer theme toggle (optional)
+    const footerThemeBtn = document.querySelector(".footer-theme-btn");
+    if (footerThemeBtn) {
+        footerThemeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
 
-if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-}
-
-toggleBtn.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark");
-
-    const currentTheme = document.body.classList.contains("dark")
-        ? "dark"
-        : "light";
-
-    localStorage.setItem("theme", currentTheme);
+            localStorage.setItem(
+                "theme",
+                document.body.classList.contains("dark") ? "dark" : "light"
+            );
+        });
+    }
 });
-
-const footerThemeBtn = document.querySelector(".footer-theme-btn");
-
-if (footerThemeBtn) {
-    footerThemeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-
-        const currentTheme = document.body.classList.contains("dark")
-            ? "dark"
-            : "light";
-
-        localStorage.setItem("theme", currentTheme);
-    });
-}

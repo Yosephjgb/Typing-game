@@ -1,0 +1,38 @@
+.game-area {
+    background: var(--card-bg);
+    color: var(--text-color);
+    width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+
+.game-area input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.game-stats {
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+title {
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.difficulty {
+    margin-top: 20px;
+}
+
+.difficulty select {
+    padding: 6px;
+    font-size: 14px;
+}

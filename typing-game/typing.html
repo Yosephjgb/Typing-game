@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="typing.css"> 
+</head>
+
+<body>
+
+<!-- NAVBAR (same as homepage) -->
+<header class="navbar">
+
+    <div class="nav-left">
+        <h2 class="logo">🎮 MiniHub</h2>
+        <nav>
+            <a href="../index.html">Games</a>
+        </nav>
+    </div>
+
+    <div class="nav-right">
+        <span id="playerName">Guest</span>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+
+</header>
+
+
+<!-- GAME AREA -->
+<section class="game-area">
+
+    <h1>Typing Game ⌨️</h1>
+
+    <p>Type the word below:</p>
+
+    <h2 id="word">Ready?</h2>
+
+    <input type="text" id="textInput" placeholder="Start typing...">
+
+    <div class="game-stats">
+        <p>Score: <span id="score">0</span></p>
+        <p>Time: <span id="time">10</span></p>
+    </div>
+
+    <button id="startBtn">Start Game</button>
+
+    <div id="gameOver" class="hidden">
+        <h2>Game Over</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+    </div>
+
+    <div class="difficulty">
+    <label>Select Difficulty:</label>
+
+    <select id="difficultySelect">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2024 MiniHub</p>
+</footer>
+
+<script src="../main.js"></script>
+<script src="typing.js"></script>
+
+</body>
+</html>
